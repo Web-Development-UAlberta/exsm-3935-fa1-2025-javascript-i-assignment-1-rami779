@@ -1,14 +1,35 @@
-// eslint-disable-next-line no-unused-vars
-/* global output, input */
-// eslint-disable-next-line no-unused-vars
+// Assignment 1
 async function main() {
-  // This is where the code you're actually experimenting with goes.
+  // Collect the first name of a user
+  let firstName = String(await input("What is your first name? "));
+  
+  // Collect the last name of a user
+  let lastName = String(await input("What is your last name? "));
 
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
+  // Assign both the first and last name to a new variable named fullname
+  let fullname = String(firstName + " " + lastName);
 
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
-  }
+  output("Your full name is: " + fullname); // to check if it works correctly
+
+  output("-------------------------------"); // making a space
+
+  // Replace any ‘o’ characters in fullname to be ‘a’ characters
+  fullnameCharactersReplaced = fullname.replace(/o/g, "e");
+
+  // output the result
+  output("Hi, This is your new name with characters are replaced: " + fullnameCharactersReplaced);
+
+  output("-------------------------------"); // making a space
+
+  // Ask the user to enter a number larger than 10
+  let numberLargerThan10 = Number(await input("Enter a number larger than 10: "));
+
+  // Ask the user to enter a number smaller than 10
+  let numberSmallerThan10 = Number(await input("Enter a number smaller than 10: "));
+
+  output("-------------------------------"); // making a space
+
+  // Output the remainder of the larger number divided by the smaller number
+  newNumber = Number(numberLargerThan10 % numberSmallerThan10);
+  output("The remainder of " + numberLargerThan10 + " divided by " + numberSmallerThan10 + " is: " + newNumber);
 }
